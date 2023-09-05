@@ -1,4 +1,4 @@
-import { StatusProps } from 'types/AppTypes'
+import { StatusProps } from 'types/appTypes'
 import { v4 as uuidv4 } from 'uuid'
 
 export class FileObject {
