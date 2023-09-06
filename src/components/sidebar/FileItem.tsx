@@ -1,7 +1,7 @@
 import { FileTextIcon } from 'icons'
 import { ListingFileItem } from './Styles'
 import { FileItemProps } from 'types/appTypes'
-import { StatusIcon } from 'components/sidebar/Status'
+import { StatusIcon } from './Status'
 import { MouseEvent } from 'react'
 
 export const FileItem = ({ file, switchActiveFile, handleRemoveFile }: FileItemProps) => {

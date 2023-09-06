@@ -4,9 +4,10 @@ import {
   useRef,
 } from 'react'
 import { FileProps } from 'types/appTypes'
-import { inactivateFiles } from 'utils/utilFiles'
-import { FileObject } from 'utils/fileObject'
-import { getStoredFiles, storeFiles } from 'utils/storage'
+import { FileObject } from './fileObject'
+import { getStoredFiles, storeFiles } from './storage'
+import { inactivateFiles } from './utilFiles'
+
 
 export const useFiles = () => {
   const [files, setFiles] = useState<FileProps[]>([new FileObject()])

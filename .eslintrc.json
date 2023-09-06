@@ -2,5 +2,8 @@
     "extends": "./.eslintrc-default.json",
     "plugins": [
       "only-warn"
-    ]
+    ],
+    "rules": {
+        "new-cap": 0
+    }
   }

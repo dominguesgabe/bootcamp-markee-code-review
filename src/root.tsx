@@ -1,7 +1,7 @@
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import { theme } from 'utils/theme'
-import { App } from './App'
 import 'normalize.css'
+import { App } from 'App'
 
 export function Root () {
   return (
