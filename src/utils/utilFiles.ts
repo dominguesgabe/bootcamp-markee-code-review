@@ -1,9 +1,9 @@
-import { FileProps } from "types/appTypes"
+import { fileProps } from "types/appTypes"
 
-export const inactivateFiles = (files: FileProps[]) =>
+export const inactivateFiles = (files: fileProps[]) =>
   files.map((file) => ({ ...file, active: false }))
 
-export const activateClickedFile = (fileId: string, files: FileProps[]) => {
+export const activateClickedFile = (fileId: string, files: fileProps[]) => {
   return files.map((file) => {
     if (file.id === fileId) {
       return {

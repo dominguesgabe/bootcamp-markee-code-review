@@ -1,12 +1,12 @@
-import { FileProps } from "types/appTypes"
+import { fileProps } from "types/appTypes"
 import localforage from "localforage"
 import { Dispatch, SetStateAction } from "react"
 import { FileObject } from "./fileObject"
 
 export const getStoredFiles = async (
-  setFiles: Dispatch<SetStateAction<FileProps[]>>,
+  setFiles: Dispatch<SetStateAction<fileProps[]>>,
 ) => {
-  const storedFiles = await localforage.getItem<FileProps[]>("files")
+  const storedFiles = await localforage.getItem<fileProps[]>("files")
 
   if (storedFiles) {
     setFiles(storedFiles)
@@ -16,6 +16,6 @@ export const getStoredFiles = async (
   }
 }
 
-export const storeFiles = async (files: FileProps[]) => {
+export const storeFiles = async (files: fileProps[]) => {
   await localforage.setItem("files", files)
 }

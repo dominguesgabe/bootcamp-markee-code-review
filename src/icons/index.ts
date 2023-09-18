@@ -1,6 +1,0 @@
-export { ReactComponent as RemoveFileIcon } from "./remove-file.svg"
-export { ReactComponent as EditingIcon } from "./editing-file.svg"
-export { ReactComponent as FileTextIcon } from "./file-text.svg"
-export { ReactComponent as SavingIcon } from "./saving-file.svg"
-export { ReactComponent as AddFileIcon } from "./add-file.svg"
-export { ReactComponent as SavedIcon } from "./saved-file.svg"

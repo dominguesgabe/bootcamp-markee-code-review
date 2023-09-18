@@ -4,7 +4,7 @@ import {
   EditingWrapper,
   MainContentWrapper,
   OutputArticle,
-} from "components/AppStyles"
+} from "Styles"
 import { ChangeEvent } from "react"
 import { MainContentProps } from "types/appTypes"
 import "highlight.js/styles/mono-blue.css"

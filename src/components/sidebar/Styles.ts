@@ -1,13 +1,13 @@
 import { styled, css } from "styled-components"
 import {
   DividerNameProps,
-  FileStyleProps,
-  GenericProps,
-  LinkProps,
+  fileStyleProps,
+  genericProps,
+  linkProps,
 } from "types/appTypes"
-import { RemoveFileIcon } from "icons"
+import { RemoveFileIcon } from "icons/RemoveFileIcon"
 
-export const SidebarWrapper = styled.div<GenericProps>`
+export const SidebarWrapper = styled.div<genericProps>`
   ${({ theme }) => css`
     width: 18%;
     height: 100vh;
@@ -32,7 +32,7 @@ export const DividerName = styled.p<DividerNameProps>`
   `}
 `
 
-export const Divider = styled.div<GenericProps>`
+export const Divider = styled.div<genericProps>`
   ${({ theme }) => css`
     width: 100%;
     padding-left: 20px;
@@ -60,7 +60,7 @@ export const Divider = styled.div<GenericProps>`
   `}
 `
 
-export const MainLogoBox = styled.div<GenericProps>`
+export const MainLogoBox = styled.div<genericProps>`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -78,7 +78,7 @@ const RemoveButton = styled(RemoveFileIcon)<any>`
   `}
 `
 
-export const FilesListingWrapper = styled.ul<GenericProps>`
+export const FilesListingWrapper = styled.ul<genericProps>`
   ${({ theme }) => css`
     width: 100%;
     display: flex;
@@ -92,7 +92,7 @@ export const FilesListingWrapper = styled.ul<GenericProps>`
   `}
 `
 
-const Root = styled.li<FileStyleProps>`
+const Root = styled.li<fileStyleProps>`
   ${({ active, theme }) => css`
     width: 100%;
     height: 42px;
@@ -122,7 +122,7 @@ const Root = styled.li<FileStyleProps>`
   `}
 `
 
-const Link = styled.a<LinkProps>`
+const Link = styled.a<linkProps>`
   ${({ theme, active }) => css`
     font-size: 16px;
     color: ${theme.colors.gray};

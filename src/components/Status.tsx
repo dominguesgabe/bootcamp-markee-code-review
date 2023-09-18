@@ -1,9 +1,11 @@
 import { styled, keyframes } from "styled-components"
-import { StatusProps } from "types/appTypes"
-import { EditingIcon, SavingIcon, SavedIcon } from "icons"
+import { statusProps } from "types/appTypes"
+import { SavingIcon } from "icons/SavingIcon"
+import { EditingIcon } from "icons/EditingIcon"
+import { SavedIcon } from "icons/SavedIcon"
 
 type StatusIconProps = {
-  status: StatusProps
+  status: statusProps
 }
 
 export const StatusIcon = ({ status }: StatusIconProps) => {

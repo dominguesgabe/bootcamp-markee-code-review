@@ -1,4 +1,4 @@
-import { StatusProps } from "types/appTypes"
+import { statusProps } from "types/appTypes"
 import { v4 as uuidv4 } from "uuid"
 
 export class FileObject {
@@ -6,5 +6,5 @@ export class FileObject {
   public name = "Sem título"
   public active = true
   public content = ""
-  public status: StatusProps = "saved"
+  public status: statusProps = "saved"
 }

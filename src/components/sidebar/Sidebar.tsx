@@ -1,5 +1,5 @@
-import { AddFileButton } from "components/AppStyles"
-import { FileItem } from "./FileItem"
+import { AddFileButton } from "Styles"
+import { FileItem } from "../FileItem"
 import {
   Divider,
   DividerName,
@@ -7,8 +7,8 @@ import {
   MainLogoBox,
   SidebarWrapper,
 } from "./Styles"
-import { SideBarProps } from "types/appTypes"
-import { AddFileIcon } from "icons"
+import { sideBarProps } from "types/appTypes"
+import { AddFileIcon } from "icons/AddFileIcon"
 
 export const Sidebar = ({
   files,
@@ -16,7 +16,7 @@ export const Sidebar = ({
   switchActiveFile,
   onAddFile: handleAddFile,
   onRemoveFile: handleRemoveFile,
-}: SideBarProps) => {
+}: sideBarProps) => {
   return (
     <SidebarWrapper>
       <MainLogoBox>
