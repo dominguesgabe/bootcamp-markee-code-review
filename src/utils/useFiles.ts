@@ -1,12 +1,8 @@
-import {
-  useState,
-  useEffect,
-  useRef,
-} from 'react'
-import { FileProps } from 'types/appTypes'
-import { FileObject } from './fileObject'
-import { getStoredFiles, storeFiles } from './storage'
-import { inactivateFiles } from './utilFiles'
+import { useState, useEffect, useRef } from "react"
+import { FileProps } from "types/appTypes"
+import { FileObject } from "./fileObject"
+import { getStoredFiles, storeFiles } from "./storage"
+import { inactivateFiles } from "./utilFiles"
 
 export const useFiles = () => {
   const [files, setFiles] = useState<FileProps[]>([new FileObject()])
@@ -19,7 +15,7 @@ export const useFiles = () => {
 
   useEffect(() => {
     if (files.length) {
-      document.title = files.find(file => file.active === true)?.name ?? ''
+      document.title = files.find((file) => file.active === true)?.name ?? ""
     }
   })
 
@@ -28,46 +24,50 @@ export const useFiles = () => {
   }, [files])
 
   useEffect(() => {
-    const activeFile = files.find(file => file.active)
+    const activeFile = files.find((file) => file.active)
 
     if (activeFile) {
-      window.history.replaceState(null, '', `/file/${activeFile.id}`)
+      window.history.replaceState(null, "", `/file/${activeFile.id}`)
     }
   }, [files])
 
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout>
 
-    function updateStatus () {
-      const file = files.find(file => file.active)
+    function updateStatus() {
+      const file = files.find((file) => file.active)
 
-      if (!file || file.status !== 'editing') {
+      if (!file || file.status !== "editing") {
         return
       }
 
       timer = setTimeout(() => {
-        setFiles(files.map(file => {
-          if (file.active) {
-            return {
-              ...file,
-              status: 'saving',
-            }
-          }
-
-          return file
-        }))
-
-        setTimeout(() => {
-          setFiles(files.map(file => {
+        setFiles(
+          files.map((file) => {
             if (file.active) {
               return {
                 ...file,
-                status: 'saved',
+                status: "saving",
               }
             }
 
             return file
-          }))
+          }),
+        )
+
+        setTimeout(() => {
+          setFiles(
+            files.map((file) => {
+              if (file.active) {
+                return {
+                  ...file,
+                  status: "saved",
+                }
+              }
+
+              return file
+            }),
+          )
         }, 300)
       }, 300)
     }
@@ -79,21 +79,23 @@ export const useFiles = () => {
   const switchActiveFile = (id: string) => {
     inputRef.current?.focus()
 
-    setFiles(files.map(file => {
-      if (file.id !== id) {
+    setFiles(
+      files.map((file) => {
+        if (file.id !== id) {
+          return {
+            ...file,
+            active: false,
+            status: "editing",
+          }
+        }
+
         return {
           ...file,
-          active: false,
-          status: 'editing',
+          active: true,
+          status: "saved",
         }
-      }
-
-      return {
-        ...file,
-        active: true,
-        status: 'saved',
-      }
-    }))
+      }),
+    )
   }
 
   const handleAddFile = (): void => {
@@ -102,18 +104,15 @@ export const useFiles = () => {
     const inactiveOldFiles = inactivateFiles(files)
     const newFile = new FileObject()
 
-    setFiles([
-      ...inactiveOldFiles,
-      newFile,
-    ])
+    setFiles([...inactiveOldFiles, newFile])
   }
 
   const handleUpdateFileName = (id: string, newName: string): void => {
-    const filesUpdated: FileProps[] = files.map(file => {
+    const filesUpdated: FileProps[] = files.map((file) => {
       if (file.id === id) {
         return {
           ...file,
-          status: 'editing',
+          status: "editing",
           name: newName,
         }
       }
@@ -125,11 +124,11 @@ export const useFiles = () => {
   }
 
   const handleUpdateFileContent = (id: string, newContent: string): void => {
-    const filesUpdated: FileProps[] = files.map(file => {
+    const filesUpdated: FileProps[] = files.map((file) => {
       if (file.id === id) {
         return {
           ...file,
-          status: 'editing',
+          status: "editing",
           content: newContent,
         }
       }
@@ -141,7 +140,7 @@ export const useFiles = () => {
   }
 
   const handleRemoveFile = (id: string) => {
-    const filteredFiles: FileProps[] = files.filter(file => file.id !== id)
+    const filteredFiles: FileProps[] = files.filter((file) => file.id !== id)
 
     setFiles(filteredFiles)
   }

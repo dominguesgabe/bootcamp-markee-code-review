@@ -4,14 +4,14 @@ import {
   EditingWrapper,
   MainContentWrapper,
   OutputArticle,
-} from 'components/appStyles'
-import { ChangeEvent } from 'react'
-import { MainContentProps } from 'types/appTypes'
-import 'highlight.js/styles/mono-blue.css'
-import { marked } from 'marked'
-import { sanitize } from 'dompurify'
+} from "components/AppStyles"
+import { ChangeEvent } from "react"
+import { MainContentProps } from "types/appTypes"
+import "highlight.js/styles/mono-blue.css"
+import { marked } from "marked"
+import { sanitize } from "dompurify"
 
-import('highlight.js').then((hljs) => {
+import("highlight.js").then((hljs) => {
   const h = hljs.default
 
   marked.setOptions({
@@ -27,8 +27,13 @@ import('highlight.js').then((hljs) => {
   })
 })
 
-export const MainContent = ({ files, inputRef, onUpdateFileName: handleUpdateFileName, onUpdateFileContent: handleUpdateFileContent }: MainContentProps) => {
-  const file = files.find(file => file.active)
+export const MainContent = ({
+  files,
+  inputRef,
+  onUpdateFileName: handleUpdateFileName,
+  onUpdateFileContent: handleUpdateFileContent,
+}: MainContentProps) => {
+  const file = files.find((file) => file.active)
 
   if (!files || !file) {
     return <></>
@@ -38,7 +43,9 @@ export const MainContent = ({ files, inputRef, onUpdateFileName: handleUpdateFil
     handleUpdateFileName(file.id, event.target.value)
   }
 
-  const handleChangeFileContent = (event: ChangeEvent<HTMLTextAreaElement>): void => {
+  const handleChangeFileContent = (
+    event: ChangeEvent<HTMLTextAreaElement>,
+  ): void => {
     handleUpdateFileContent(file.id, event.target.value)
   }
 
@@ -52,11 +59,15 @@ export const MainContent = ({ files, inputRef, onUpdateFileName: handleUpdateFil
       />
       <EditingWrapper>
         <EditingTextarea
-          placeholder='# Digite aqui seu texto'
+          placeholder="# Digite aqui seu texto"
           value={file.content}
           onChange={handleChangeFileContent}
         />
-        <OutputArticle dangerouslySetInnerHTML={{ __html: marked.parse(sanitize(file.content)) }} />
+        <OutputArticle
+          dangerouslySetInnerHTML={{
+            __html: marked.parse(sanitize(file.content)),
+          }}
+        />
       </EditingWrapper>
     </MainContentWrapper>
   )

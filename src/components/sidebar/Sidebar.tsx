@@ -1,42 +1,44 @@
-import { AddFileButton } from 'components/appStyles'
-import { FileItem } from './FileItem'
+import { AddFileButton } from "components/AppStyles"
+import { FileItem } from "./FileItem"
 import {
   Divider,
   DividerName,
   FilesListingWrapper,
   MainLogoBox,
   SidebarWrapper,
-} from './Styles'
-import { SideBarProps } from 'types/appTypes'
-import { AddFileIcon } from 'icons'
+} from "./Styles"
+import { SideBarProps } from "types/appTypes"
+import { AddFileIcon } from "icons"
 
-export const Sidebar = ({ files, inputRef, switchActiveFile, onAddFile: handleAddFile, onRemoveFile: handleRemoveFile }: SideBarProps) => {
+export const Sidebar = ({
+  files,
+  inputRef,
+  switchActiveFile,
+  onAddFile: handleAddFile,
+  onRemoveFile: handleRemoveFile,
+}: SideBarProps) => {
   return (
     <SidebarWrapper>
       <MainLogoBox>
-        <img src='/main-logo.png' alt='app logo' />
+        <img src="/main-logo.png" alt="app logo" />
       </MainLogoBox>
       <Divider>
-        <DividerName>
-          Arquivos
-        </DividerName>
+        <DividerName>Arquivos</DividerName>
       </Divider>
       <AddFileButton onClick={handleAddFile}>
         <AddFileIcon />
         Adicionar
       </AddFileButton>
       <FilesListingWrapper>
-        {
-          files.map(file => (
-            <FileItem
-              key={file.id}
-              file={file}
-              switchActiveFile={switchActiveFile}
-              handleRemoveFile={handleRemoveFile}
-              inputRef={inputRef}
-            />
-          ))
-        }
+        {files.map((file) => (
+          <FileItem
+            key={file.id}
+            file={file}
+            switchActiveFile={switchActiveFile}
+            handleRemoveFile={handleRemoveFile}
+            inputRef={inputRef}
+          />
+        ))}
       </FilesListingWrapper>
     </SidebarWrapper>
   )

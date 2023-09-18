@@ -1,13 +1,9 @@
-import { styled, keyframes } from 'styled-components'
-import { StatusProps } from 'types/appTypes'
-import {
-  EditingIcon,
-  SavingIcon,
-  SavedIcon,
-} from 'icons'
+import { styled, keyframes } from "styled-components"
+import { StatusProps } from "types/appTypes"
+import { EditingIcon, SavingIcon, SavedIcon } from "icons"
 
 type StatusIconProps = {
-    status: StatusProps
+  status: StatusProps
 }
 
 export const StatusIcon = ({ status }: StatusIconProps) => {
@@ -31,5 +27,5 @@ const Rotation = keyframes`
 `
 
 const Saving = styled(SavingIcon)`
-    animation: ${Rotation} 600ms linear infinite;
+  animation: ${Rotation} 600ms linear infinite;
 `

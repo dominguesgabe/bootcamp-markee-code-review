@@ -1,9 +1,10 @@
-import { FileProps } from 'types/appTypes'
+import { FileProps } from "types/appTypes"
 
-export const inactivateFiles = (files: FileProps[]) => files.map(file => ({ ...file, active: false }))
+export const inactivateFiles = (files: FileProps[]) =>
+  files.map((file) => ({ ...file, active: false }))
 
 export const activateClickedFile = (fileId: string, files: FileProps[]) => {
-  return files.map(file => {
+  return files.map((file) => {
     if (file.id === fileId) {
       return {
         ...file,
@@ -13,7 +14,7 @@ export const activateClickedFile = (fileId: string, files: FileProps[]) => {
       return {
         ...file,
         active: false,
-        status: 'saved',
+        status: "saved",
       }
     }
   })

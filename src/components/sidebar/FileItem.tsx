@@ -1,10 +1,14 @@
-import { FileTextIcon } from 'icons'
-import { ListingFileItem } from './Styles'
-import { FileItemProps } from 'types/appTypes'
-import { StatusIcon } from './Status'
-import { MouseEvent } from 'react'
+import { FileTextIcon } from "icons"
+import { ListingFileItem } from "./Styles"
+import { FileItemProps } from "types/appTypes"
+import { StatusIcon } from "./Status"
+import { MouseEvent } from "react"
 
-export const FileItem = ({ file, switchActiveFile, handleRemoveFile }: FileItemProps) => {
+export const FileItem = ({
+  file,
+  switchActiveFile,
+  handleRemoveFile,
+}: FileItemProps) => {
   const handleItemClick = (event: MouseEvent<HTMLLIElement>) => {
     event.preventDefault()
     switchActiveFile(file.id)
@@ -17,7 +21,10 @@ export const FileItem = ({ file, switchActiveFile, handleRemoveFile }: FileItemP
         {file.name}
       </ListingFileItem.Link>
       {file.active && <StatusIcon status={file.status} />}
-      <ListingFileItem.RemoveButton onClick={() => handleRemoveFile(file.id)} title={`remover o arquivo ${file.name}`} />
+      <ListingFileItem.RemoveButton
+        onClick={() => handleRemoveFile(file.id)}
+        title={`remover o arquivo ${file.name}`}
+      />
     </ListingFileItem.Root>
   )
 }

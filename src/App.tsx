@@ -1,7 +1,7 @@
 import { Sidebar } from "components/sidebar/index"
 import { MainContent } from "components/MainContent/MainContent"
 import { useFiles } from "utils/useFiles"
-import { AppWrapper } from "components/appStyles"
+import { AppWrapper } from "components/AppStyles"
 
 export function App() {
   const {
