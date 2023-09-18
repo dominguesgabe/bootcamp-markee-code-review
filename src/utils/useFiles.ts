@@ -8,7 +8,6 @@ import { FileObject } from './fileObject'
 import { getStoredFiles, storeFiles } from './storage'
 import { inactivateFiles } from './utilFiles'
 
-
 export const useFiles = () => {
   const [files, setFiles] = useState<FileProps[]>([new FileObject()])
 

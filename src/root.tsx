@@ -1,9 +1,9 @@
-import { ThemeProvider, createGlobalStyle } from 'styled-components'
-import { theme } from 'utils/theme'
-import 'normalize.css'
-import { App } from 'App'
+import { ThemeProvider, createGlobalStyle } from "styled-components"
+import { theme } from "utils/theme"
+import "normalize.css"
+import { App } from "App"
 
-export function Root () {
+export function Root() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
