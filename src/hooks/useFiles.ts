@@ -5,7 +5,7 @@ import { getStoredFiles, storeFiles } from "../utils/storage"
 import { inactivateFiles } from "../utils/utilFiles"
 
 export const useFiles = () => {
-  const [files, setFiles] = useState<FileProps[]>([new FileObject()])
+  const [files, setFiles] = useState<FileProps[]>([])
 
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -35,14 +35,14 @@ export const useFiles = () => {
     let timer: ReturnType<typeof setTimeout>
 
     function updateStatus() {
-      const file = files.find((file) => file.active)
+      const file = files.find((file) => file.active === true)
 
       if (!file || file.status !== "editing") {
         return
       }
 
       timer = setTimeout(() => {
-        setFiles(
+        setFiles((files) =>
           files.map((file) => {
             if (file.active) {
               return {
@@ -56,7 +56,7 @@ export const useFiles = () => {
         )
 
         setTimeout(() => {
-          setFiles(
+          setFiles((files) =>
             files.map((file) => {
               if (file.active) {
                 return {
@@ -73,6 +73,7 @@ export const useFiles = () => {
     }
 
     updateStatus()
+
     return () => clearTimeout(timer)
   }, [files])
 
