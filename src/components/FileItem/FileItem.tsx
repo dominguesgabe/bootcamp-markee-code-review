@@ -1,14 +1,14 @@
 import { FileTextIcon } from "icons/FileTextIcon"
-import { ListingFileItem } from "./Sidebar/Styles"
-import { fileItemProps } from "types/appTypes"
-import { StatusIcon } from "./Status"
+import { ListingFileItem } from "./Styles"
+import { FileItemProps } from "types/appTypes"
+import { StatusIcon } from "components/Status"
 import { MouseEvent } from "react"
 
 export const FileItem = ({
   file,
   switchActiveFile,
   handleRemoveFile,
-}: fileItemProps) => {
+}: FileItemProps) => {
   const handleItemClick = (event: MouseEvent<HTMLLIElement>) => {
     event.preventDefault()
     switchActiveFile(file.id)

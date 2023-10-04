@@ -1,12 +1,12 @@
 import { styled, css } from "styled-components/macro"
-import { editingFileNameProps, genericProps } from "types/appTypes"
+import { EditingFileNameProps, GenericProps } from "types/appTypes"
 
-export const AppWrapper = styled.div<genericProps>`
+export const AppWrapper = styled.div<GenericProps>`
   display: flex;
   flex-wrap: wrap;
 `
 
-export const AddFileButton = styled.button<genericProps>`
+export const AddFileButton = styled.button<GenericProps>`
   ${({ theme }) => css`
     width: 100%;
     margin-top: 24px;
@@ -29,13 +29,13 @@ export const AddFileButton = styled.button<genericProps>`
   `}
 `
 
-export const MainContentWrapper = styled.div<genericProps>`
+export const MainContentWrapper = styled.div<GenericProps>`
   width: 82%;
   height: 100vh;
   padding: 24px 30px;
 `
 
-export const EditingFileName = styled.input<editingFileNameProps>`
+export const EditingFileName = styled.input<EditingFileNameProps>`
   ${({ theme }) => css`
     width: 100%;
     height: 10%;

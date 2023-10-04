@@ -8,7 +8,7 @@ import {
 
 export type statusProps = "editing" | "saving" | "saved"
 
-export type fileProps = {
+export type FileProps = {
   id: string
   name: string
   content: string
@@ -17,42 +17,42 @@ export type fileProps = {
 }
 
 export type MainContentProps = {
-  files: fileProps[]
+  files: FileProps[]
   inputRef: RefObject<HTMLInputElement>
   onUpdateFileName: (id: string, newName: string) => void
   onUpdateFileContent: (id: string, newName: string) => void
 }
 
-export type sideBarProps = {
-  files: fileProps[]
+export type SideBarProps = {
+  files: FileProps[]
   inputRef: RefObject<HTMLInputElement>
-  setFiles: Dispatch<SetStateAction<fileProps[]>>
+  setFiles: Dispatch<SetStateAction<FileProps[]>>
   onAddFile: () => void
   switchActiveFile: (id: string) => void
   onRemoveFile: (id: string) => void
 }
 
-export type editingAreaProps = {
-  file: fileProps
+export type EditingAreaProps = {
+  file: FileProps
 }
 
-export type fileItemProps = {
-  file: fileProps
+export type FileItemProps = {
+  file: FileProps
   inputRef: RefObject<HTMLInputElement>
   switchActiveFile: (id: string) => void
   handleRemoveFile: (id: string) => void
 }
 
-export type genericProps = {
+export type GenericProps = {
   children: ReactNode
 }
 
-export type linkProps = {
+export type LinkProps = {
   onClick: (event: any) => void
   active: boolean
 }
 
-export type fileStyleProps = genericProps & {
+export type FileStyleProps = GenericProps & {
   active: boolean
 }
 
@@ -61,10 +61,10 @@ export type DividerNameProps = {
 }
 
 export type OutputAreaProps = {
-  file: fileProps
+  file: FileProps
 }
 
-export type editingFileNameProps = {
+export type EditingFileNameProps = {
   value: string
   onChange: (event: ChangeEvent<HTMLInputElement>) => void
 }

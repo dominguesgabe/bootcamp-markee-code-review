@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react"
-import { fileProps } from "types/appTypes"
+import { FileProps } from "types/appTypes"
 import { FileObject } from "../utils/fileObject"
 import { getStoredFiles, storeFiles } from "../utils/storage"
 import { inactivateFiles } from "../utils/utilFiles"
 
 export const useFiles = () => {
-  const [files, setFiles] = useState<fileProps[]>([new FileObject()])
+  const [files, setFiles] = useState<FileProps[]>([new FileObject()])
 
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -108,7 +108,7 @@ export const useFiles = () => {
   }
 
   const handleUpdateFileName = (id: string, newName: string): void => {
-    const filesUpdated: fileProps[] = files.map((file) => {
+    const filesUpdated: FileProps[] = files.map((file) => {
       if (file.id === id) {
         return {
           ...file,
@@ -124,7 +124,7 @@ export const useFiles = () => {
   }
 
   const handleUpdateFileContent = (id: string, newContent: string): void => {
-    const filesUpdated: fileProps[] = files.map((file) => {
+    const filesUpdated: FileProps[] = files.map((file) => {
       if (file.id === id) {
         return {
           ...file,
@@ -140,7 +140,7 @@ export const useFiles = () => {
   }
 
   const handleRemoveFile = (id: string) => {
-    const filteredFiles: fileProps[] = files.filter((file) => file.id !== id)
+    const filteredFiles: FileProps[] = files.filter((file) => file.id !== id)
 
     setFiles(filteredFiles)
   }
