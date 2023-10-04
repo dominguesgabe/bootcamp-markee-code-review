@@ -1,7 +1,7 @@
 import { FileTextIcon } from "icons/FileTextIcon"
 import { ListingFileItem } from "./Styles"
 import { FileItemProps } from "types/appTypes"
-import { StatusIcon } from "components/Status"
+import { StatusIcon } from "components"
 import { MouseEvent } from "react"
 
 export const FileItem = ({

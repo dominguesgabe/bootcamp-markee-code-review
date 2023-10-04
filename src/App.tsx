@@ -1,5 +1,4 @@
-import { Sidebar } from "components/Sidebar/index"
-import { MainContent } from "components/MainContent/MainContent"
+import { Sidebar, MainContent } from "components"
 import { useFiles } from "hooks/useFiles"
 import { AppWrapper } from "Styles"
 

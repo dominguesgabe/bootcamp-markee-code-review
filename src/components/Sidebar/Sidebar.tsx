@@ -1,5 +1,5 @@
 import { AddFileButton } from "Styles"
-import { FileItem } from "components/FileItem"
+import { FileItem } from "components"
 import {
   Divider,
   DividerName,
