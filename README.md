@@ -1,6 +1,6 @@
 # markee-react-bootcamp
 
-## [Try it!](https://markee-markdown.netlify.app/)
+## [Try it!](https://markee-code-review.netlify.app/)
 
 A Markdown writer and reader based on [Brainn's](https://www.brainn.co/) bootcamp using React and Typescript
 
@@ -13,8 +13,8 @@ A Markdown writer and reader based on [Brainn's](https://www.brainn.co/) bootcam
 ### Setup
 
 1. Clone the project
-2. Run ``npm install``
-3. Run ``npm run dev``
+2. Run `npm install`
+3. Run `npm run dev`
 
 ### Debug Utils
 
