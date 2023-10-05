@@ -1,0 +1,68 @@
+{
+  "name": "markee-react-bootcamp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "npx eslint \"src/*.{tsx,ts}\"",
+    "lint:fix": "npm run lint -- --fix",
+    "type-check": "npx tsc --project tsconfig.json --pretty --noEmit",
+    "prepare": "npx husky install"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "babel-plugin-styled-components": "^2.1.4",
+    "dompurify": "^3.0.5",
+    "highlight.js": "^11.8.0",
+    "localforage": "^1.10.0",
+    "marked": "^5.1.1",
+    "normalize.css": "^8.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "styled-components": "^6.0.1",
+    "typescript": "^4.9.5",
+    "uuid": "^9.0.0",
+    "web-vitals": "^2.1.4"
+  },
+  "eslintConfig": {
+    "extends": "./.eslintrc.json"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/eslint-parser": "^7.22.5",
+    "@types/dompurify": "^3.0.2",
+    "@types/jest": "^27.5.2",
+    "@types/marked": "^5.0.1",
+    "@types/node": "^16.18.37",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@types/styled-components": "^5.1.26",
+    "@types/uuid": "^9.0.2",
+    "husky": "^8.0.3",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.2"
+  }
+}
